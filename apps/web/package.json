@@ -1,0 +1,51 @@
+{
+  "name": "web",
+  "description": "example",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "deploy": "echo \"Error: no deploy specified\" && exit 1",
+    "format": "prettier --write src/**/*",
+    "lint": "next lint --fix && stylelint --ignore-path .gitignore \"src/**/*.+(css|scss|ts|tsx)\" --fix",
+    "start": "next start",
+    "start:debug": "echo \"Error: no start:debug specified\" && exit 1",
+    "start:dev": "next dev",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:cov": "echo \"Error: no test:cov specified\" && exit 1",
+    "test:debug": "echo \"Error: no test:debug specified\" && exit 1",
+    "test:e2e": "echo \"Error: no test:e2e specified\" && exit 1",
+    "test:watch": "echo \"Error: no test:watch specified\" && exit 1",
+    "generate": "graphql-codegen --config codegen.yml -r dotenv/config"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@urql/core": "^3.0.5",
+    "clsx": "^1.2.1",
+    "graphql": "^16.6.0",
+    "graphql-tag": "^2.12.6",
+    "jotai": "^1.10.0",
+    "next": "13.0.4",
+    "next-urql": "^4.0.0",
+    "react": "18.2.0",
+    "react-content-loader": "^6.2.0",
+    "react-dom": "18.2.0",
+    "react-is": "^18.2.0",
+    "urql": "^3.0.3"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^2.13.12",
+    "@graphql-codegen/near-operation-file-preset": "^2.4.4",
+    "@graphql-codegen/typescript-operations": "^2.5.7",
+    "@graphql-codegen/typescript-urql": "^3.7.3",
+    "@graphql-codegen/urql-introspection": "^2.2.1",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "@welldone-software/why-did-you-render": "^7.0.1",
+    "eslint-config-custom": "workspace:0.0.0",
+    "stylelint-config-custom": "workspace:0.0.0",
+    "tsconfig": "workspace:0.0.0"
+  },
+  "sideEffects": false
+}

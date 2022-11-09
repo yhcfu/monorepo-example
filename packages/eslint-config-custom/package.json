@@ -1,0 +1,19 @@
+{
+  "name": "eslint-config-custom",
+  "description": "example",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "eslint-config-next": "^12.3.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "7.28.0",
+    "eslint-plugin-testing-library": "^5.9.1"
+  }
+}

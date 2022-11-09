@@ -1,0 +1,4 @@
+{
+  "src/**/*.{css,scss,ts,d.ts,js,cjs,mjs,jsx,tsx,md,mdx}": "prettier --write --ignore-path .gitignore",
+  "src/**/*.{ts,d.ts,js,cjs,mjs,jsx,tsx}": "eslint --fix"
+}

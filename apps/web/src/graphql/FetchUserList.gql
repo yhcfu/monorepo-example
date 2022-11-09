@@ -1,0 +1,11 @@
+query MyQuery {
+  users {
+    exampleField
+  }
+}
+
+query FindUser($id: ID!) {
+  user(id: $id) {
+    exampleField
+  }
+}

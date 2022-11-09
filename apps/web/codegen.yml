@@ -1,0 +1,30 @@
+overwrite: true
+schema:
+  - '../../apps/bff/generated/schema.gql'
+documents: 'src/graphql/**/*.gql'
+generates:
+  # 型定義のみ
+  src/types/gql.generated.ts:
+    plugins:
+      - typescript
+    config:
+      scalars:
+        DateTime: Date
+    hooks:
+      afterOneFileWrite:
+        - prettier --write
+  src/:
+    config:
+      scalars:
+        ID: string
+        DateTime: Date
+    hooks:
+      afterOneFileWrite:
+        - prettier --write
+    preset: near-operation-file
+    presetConfig:
+      baseTypesPath: types/gql.generated.ts # 上記のtypesをつなげる
+    plugins:
+      - 'typescript-operations'
+      - 'urql-introspection'
+      - 'typescript-urql'
