@@ -1,0 +1,49 @@
+{
+  "name": "pnpm-mono-example",
+  "description": "example",
+  "version": "0.0.0",
+  "author": "",
+  "keywords": [],
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "build:docker": "COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml build --parallel",
+    "format": "turbo run format",
+    "codegen": "turbo run codegen",
+    "lint": "turbo run lint",
+    "lint-staged": "lint-staged",
+    "preinstall": "npx -y only-allow pnpm",
+    "prepare": "husky install",
+    "dev": "turbo run dev",
+    "test": "turbo run test",
+    "generate": "turbo run generate",
+    "clean": "rimraf ./*/**/{node_modules,.turbo,dist,.next} && rimraf node_modules pnpm-lock.yaml"
+  },
+  "devDependencies": {
+    "@bufbuild/buf": "^1.27.2",
+    "@types/jest": "29.5.7",
+    "@types/node": "^20.8.10",
+    "eslint": "^8.52.0",
+    "eslint-config-custom": "workspace:0.0.0",
+    "husky": "^8.0.3",
+    "jest": "29.7.0",
+    "lint-staged": "^15.0.2",
+    "prettier": "^3.0.3",
+    "rimraf": "^5.0.5",
+    "stylelint": "^15.11.0",
+    "tsconfig-paths": "4.2.0",
+    "turbo": "^1.10.16",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18.12.0",
+    "npm": "use pnpm",
+    "pnpm": ">=7.17.0",
+    "yarn": "use pnpm"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

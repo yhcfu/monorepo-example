@@ -1,0 +1,13 @@
+version: v1
+breaking:
+  use:
+    - FILE
+  ignore_unstable_packages: true
+lint:
+  use:
+    - DEFAULT
+    - UNARY_RPC
+build:
+  excludes:
+    - node_modules
+    - __generated__

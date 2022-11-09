@@ -1,0 +1,31 @@
+{
+  // See https://turbo.build/repo/docs/reference/configuration
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "format": {
+      "cache": false
+    },
+    "lint": {
+      "cache": false
+    },
+    "dev": {
+      "cache": false
+    },
+    "test": {
+      "dependsOn": ["^build"]
+    },
+    "generate": {
+      "cache": false
+    },
+    "codegen": {
+      "cache": false
+    },
+    "deploy": {
+      "dependsOn": ["build", "test", "lint"]
+    }
+  }
+}

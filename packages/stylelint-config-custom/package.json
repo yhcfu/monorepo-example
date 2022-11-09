@@ -1,0 +1,16 @@
+{
+  "name": "stylelint-config-custom",
+  "description": "example",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "@stylelint/postcss-css-in-js": "^0.38.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recess-order": "^4.3.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-standard-scss": "^11.1.0",
+    "stylelint-prettier": "^4.0.2"
+  }
+}

@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  db:
+    container_name: db
+    image: mariadb:latest
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: password
+      MARIADB_DATABASE: dummy # db/initdb.d/01_create_database.sql で複数管理する
+      MARIADB_USER: user
+      MARIADB_PASSWORD: password
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - ./db/data:/var/lib/mysql
+      - ./db/conf.d:/etc/mysql/conf.d
+      - ./db/initdb.d:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
+  web:
+    container_name: pnpm-mono_web
+    build:
+      context: .
+      dockerfile: ./apps/web/Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - app_network
+  bff:
+    container_name: pnpm-mono_bff
+    build:
+      context: .
+      dockerfile: ./apps/bff/Dockerfile
+    restart: always
+    ports:
+      - 3001:3001
+    networks:
+      - app_network
+
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
+networks:
+  app_network:
+    external: true

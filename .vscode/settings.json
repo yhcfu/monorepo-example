@@ -1,0 +1,34 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports": true,
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "eslint.useESLintClass": true,
+  "eslint.workingDirectories": [
+    {
+      "pattern": "./apps/*/",
+      "changeProcessCWD": true
+    },
+    {
+      "pattern": "./packages/*/",
+      "changeProcessCWD": true
+    }
+  ],
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "files.trimTrailingWhitespace": false,
+  "files.associations": {
+    "turbo.json": "jsonc"
+  },
+  "files.autoSave": "onFocusChange",
+  "npm.packageManager": "pnpm",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "protoc": {
+    "options": ["--proto_path=./apps/svc/proto"]
+  }
+}
